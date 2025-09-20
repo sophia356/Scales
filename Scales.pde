@@ -1,11 +1,20 @@
 void setup() {
-  size(500, 500);  //feel free to change the size
-  noLoop(); //stops the draw() function from repeating
+  size(500, 500); 
+  noLoop(); 
 }
 void draw() {
-  //your code here
+  for(int y = 0; y < 500; y+=30)
+    for(int x = 0; x < 500; x+=25)
+      scale(x,y);
 }
 void scale(int x, int y) {
-  //your code here
+  fill((int)(Math.random()*100), (int)(Math.random()*100), (int)(Math.random()*205));
+  beginShape();
+  curveVertex(x,y);
+  curveVertex(x,y);
+  curveVertex(10+x,40+y);
+  curveVertex(60+x, 60+y);
+  curveVertex(60+x,60+y);
+  endShape();
 }
 
